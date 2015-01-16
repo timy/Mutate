@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui x11extras
+QT += core gui x11extras
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,7 +12,7 @@ include(qxtglobalshortcut/qxtglobalshortcut.pri)
 include(qtsinglecoreapplication/qtsinglecoreapplication.pri)
 
 isEmpty(PREFIX) {
- PREFIX = /usr/local/bin
+    PREFIX = /usr/local/bin
 }
 
 TARGET = mutate
@@ -20,9 +20,9 @@ TEMPLATE = app
 target.path = $$PREFIX/
 INSTALLS = target
 
-
-SOURCES += main.cpp\
-        widget.cpp \
+SOURCES += \
+    main.cpp \
+    widget.cpp \
     returnbyscript.cpp \
     defaulsearch.cpp \
     config_parse.cpp \
@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     gpixbuftoqicon.cpp
 
 
-HEADERS  += widget.h \
+HEADERS += \
+    widget.h \
     returnbyscript.h \
     defaulsearch.h \
     config_parse.h \
@@ -56,7 +57,7 @@ HEADERS  += widget.h \
     gpixbuftoqicon.h
 
 
-FORMS    += widget.ui \
+FORMS += widget.ui \
     setting.ui \
     hotkey.ui \
     listitem.ui \
@@ -66,11 +67,13 @@ INCLUDEPATH += ../include\
 
 LIBS += -lX11 -L../libs -lboost_regex\
 
-CONFIG += c++11\
-          link_pkgconfig
+CONFIG += \
+    c++11 \
+    link_pkgconfig
 
-PKGCONFIG += gtk+-2.0\
-             gio-2.0
+PKGCONFIG += \
+    gtk+-2.0 \
+    gio-2.0
 
 RESOURCES += \
     icons.qrc

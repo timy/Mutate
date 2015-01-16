@@ -40,6 +40,14 @@ chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
 ```
 
+Customized installation (e.g., target directory at "$HOME/software/mutate"):
+```bash
+qmake PREFIX=/home/timy/software/mutate
+make
+make install
+./post_install
+```
+
 ### From Package Release
 ```bash
 git clone https://github.com/qdore/Mutate.git
@@ -47,7 +55,7 @@ cd Mutate/release
 sudo apt-get install gdebi
 sudo gdebi mutate_2.3.deb
 ```
-	
+
 ## Features
 Loaded with features to increase your productivity.
 
@@ -97,8 +105,8 @@ Type preference to open the preferences window.
 
 The first row is for the hotkey to open Mutate. The default is Ctrl+D.
 
-Other rows configure the path, icon path, hotkey, and keyword for different 
-scritps. For example, google_translate's hotkey is configured as Ctrl+T, and 
+Other rows configure the path, icon path, hotkey, and keyword for different
+scritps. For example, google_translate's hotkey is configured as Ctrl+T, and
 when you press it Mutate will type 'tr' and the selected text.
 
 ```
@@ -108,7 +116,7 @@ NOTE:If you want use key 'super' as your hotkey, type Meta will help.
 ![preferemce demo](http://i.imgur.com/1hHLY6r.png)
 
 ## Custom Scripts
-When you type "tr work" in the line editor, Mutate will execute 
+When you type "tr work" in the line editor, Mutate will execute
 ./google_translate.py in the background.
 
 ```
