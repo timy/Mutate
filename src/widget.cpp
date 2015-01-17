@@ -43,7 +43,7 @@ Widget::Widget(QWidget *parent) :
     plainTextEdit->setMinimumSize(QSize(550, 75));
     plainTextEdit->setMaximumSize(QSize(2048, 75));
     QFont font2;
-    font2.setPointSize(40);
+    font2.setPointSize(25);
     plainTextEdit->setFont(font2);
     plainTextEdit->setFocusPolicy(Qt::StrongFocus);
     plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -55,7 +55,7 @@ Widget::Widget(QWidget *parent) :
     plainTextEdit->listWidget = listWidget;
     listWidget->setObjectName(QStringLiteral("listWidget"));
     QFont font1;
-    font1.setPointSize(20);
+    font1.setPointSize(10);
     listWidget->setFont(font1);
     listWidget->setFocusPolicy(Qt::NoFocus);
     ui->formLayout->setWidget(1, QFormLayout::SpanningRole, listWidget);
@@ -94,8 +94,7 @@ void Widget::enterCurItem()
 
 void Widget::hotkeyPressed()
 {
-    if (this->isVisible())
-    {
+    if (this->isVisible()) {
         this->plainTextEdit->setPlainText("");
         this->hide();
     }
@@ -132,7 +131,7 @@ void Widget::OtherhotkeyPressed(std::string s, bool argument)
         }
         else {
             try {
-                std::shared_ptr<ConfigParse> C(new ConfigParse(CONFPATH));
+                std::shared_ptr<ConfigParse> C(new ConfigParse(CFG_FILE));
                 QProcess *newProcess = new QProcess();
                 newProcess->start(QString::fromStdString(C->getValue(s, "ScriptAddress")));
             }

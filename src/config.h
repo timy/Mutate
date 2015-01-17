@@ -12,7 +12,7 @@
 #define beginheight 125
 #define iconsize 42
 #define listwidgety 91
-#define PATH getHomPath()
+#define PATH getHomePath()
 
 #define ICON ":/icons/icons/search.png"
 #define INTERNETICON ":/icons/icons/workflow_openurl.png"
@@ -22,24 +22,23 @@
 
 #define SEARCHURL "https://www.google.com/search?q="
 
-#define CFPATH (std::string(PATH)+"/.config/Mutate")
-#define FREQUENCEPATH (CFPATH+"/frequence")
-#define CONFPATH (CFPATH+"/config.ini")
-#define URLPATH (CFPATH+"/url.history")
+#define CFG_PATH (std::string(PATH) + "/.config/Mutate")
+#define FREQUENCEPATH (CFG_PATH + "/frequence")
+#define CFG_FILE (CFG_PATH + "/config.ini")
+#define URLPATH (CFG_PATH + "/url.history")
 #define APPSEARCHPATH ("/usr/share/applications")
 //#define APPSEARCHPATH2 ("/usr/share/app-install/desktop")
-#define ICONSEARCHPATHS {\
-std::string("/usr/share/icons"),\
-std::string("/usr/share/app-install/icons"),\
-PATH + "/.local/share/icons",\
-}
+#define ICONSEARCHPATHS { std::string("/usr/share/icons"),      \
+            std::string("/usr/share/app-install/icons"),        \
+            PATH + "/.local/share/icons",                       \
+            }
 
 #define MAXADDTOLISTSIZE 9
 #define MAXSORTSIZE 50
-#define MAXPRINTSIZE 9
+#define MAXPRINTSIZE 9 // max number of rows to display
 
 #define MOVE CenterToScreen(this);
 
-std::string getHomPath();
+std::string getHomePath();
 void CenterToScreen(QWidget* widget);
 #endif // CONFIG_H

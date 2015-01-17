@@ -148,7 +148,7 @@ void defaulSearch::searchScripts()
                     );
     }
     try {
-        ConfigParse cp(CONFPATH.c_str());
+        ConfigParse cp(CFG_FILE.c_str());
         auto sects = cp.getSections();
         for (auto beg = sects.begin(); beg != sects.end(); beg++)
         {
